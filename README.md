@@ -20,7 +20,7 @@ To conduct this analysis, I will collect two main datasets:
        **1. Turnover Rates from UFA (Ultimate Frisbee Association)**
        
 Source: https://watchufa.com/stats/team-game-stats (It shows all turnover and other stats for the teams)
-Data: Turnover rates of a DC Breeze team throughout the season.
+Data: Turnover rates of a DC Breeze team throughout the last three season.
 
 **Fields Extracted:**
 	•	Date of the match
@@ -53,6 +53,22 @@ By understanding this relationship, teams can make better decisions when plannin
 2. Box plots: Turnover counts by wind speed categories (e.g., calm, moderate, strong)
 3. Scatter plot: Wind speed vs. turnover rate
 4. Correlation matrix to explore relationship between variables
+
+
+### Limitations & Considerations
+
+- The analysis is limited to the 2022-23-24 season of DC Breeze and may not generalize to all teams or weather conditions.
+- Wind speed is taken from city-level estimates and may not perfectly reflect stadium-level wind patterns.
+- Turnover types (forced vs. unforced) are not distinguished due to data limitations.
+
+
+###  Tools & Libraries
+
+- Python 3.9
+- pandas, numpy
+- matplotlib, seaborn
+- scipy (for statistical tests)
+- requests (API calls)
 
 ### Hypothesis Testing
 
