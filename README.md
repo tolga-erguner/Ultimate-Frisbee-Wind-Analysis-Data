@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f563d0ab-c8b6-4d98-ad46-d850f6c32dcc)### **Project Description**
+### **Project Description**
 
 This project aims to analyze how wind speed affects turnover rates in Ultimate Frisbee, using the DC Breeze team’s performance in the 2022–2024 UFA seasons. Turnovers—losing possession of the disc—are critical moments in a match, and wind conditions are often considered a major factor in their occurrence.
 
@@ -42,6 +42,19 @@ By understanding this relationship, teams can make better decisions when plannin
 2. Box plots: Turnover counts by wind speed categories (e.g., calm, moderate, strong)
 3. Scatter plot: Wind speed vs. turnover rate
 4. Pearson correlation coefficient
+
+![Image](https://github.com/user-attachments/assets/bc9a2ff0-3d02-49dc-bc30-652eee300802)
+
+
+
+![Image 2](https://github.com/user-attachments/assets/3f498f9a-eafe-45da-8514-b2ef823afce5)
+
+
+
+
+![Image 1](https://github.com/user-attachments/assets/37aa279d-cc60-46a1-8828-6f0bf7ee1f85)
+
+
 
 ### **Hypothesis Testing**
 
