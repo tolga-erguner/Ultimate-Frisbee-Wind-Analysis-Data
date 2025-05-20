@@ -125,7 +125,7 @@ Tree-based models like **Decision Trees** and **Random Forests** excel in this t
 
 - Python 3.9
 - pandas, numpy
-- matplotlib, seaborn
+- matplotlib, seaborn, scikit-learn
 - scipy (for statistical tests)
 - requests (API calls)
 - selenium (for web scraping)
