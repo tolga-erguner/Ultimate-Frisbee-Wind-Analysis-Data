@@ -62,8 +62,58 @@ By understanding this relationship, teams can make better decisions when plannin
 - **Alternative Hypothesis (H₁):** Higher wind speed leads to higher turnover rates.
 
 **Test Methods:**
-- Pearson correlation coefficient: r = 0.33, p = 0.0314 (Significant positive correlation)
-- Two-sample t-test (Calm vs Windy+Very Windy): t = -1.33, p = 0.2047 (Not significant)
+- **Pearson Correlation**  
+  - `r = 0.60`, `p = 2.23e-05`  
+  - Suggests a **moderate positive correlation** that is statistically significant
+
+- **Two-sample T-Test**  
+  - Compared calm conditions vs windy/very windy
+  - `t = -2.38`, `p = 0.0324`  
+  - Indicates a **significant difference** in turnover averages between wind levels
+
+These findings confirm a meaningful relationship between wind speed and turnover frequency, supporting the project's hypothesis.
+
+### **Machine Learning Models**
+
+To move beyond correlation, we attempted **predictive modeling** using turnover counts as the target, and wind speed along with percentage-based performance metrics as features.
+
+#### 3 Models Trained:
+
+- **Linear Regression**
+  - R² Score: -0.97
+  - MSE: 30.77  
+  - ➤ Failed to model the relationship due to non-linearity of the datasets.
+
+<img width="720" alt="Screenshot 2025-05-20 at 21 45 35" src="https://github.com/user-attachments/assets/88823295-1f14-4a8d-97be-60bd7543738b" />
+
+
+- **Decision Tree Regressor**
+  - R² Score: 0.69
+  - MSE: 4.89  
+  - ➤ Captured branching relationships, handled thresholds better.
+ 
+  <img width="720" alt="Screenshot 2025-05-20 at 21 45 41" src="https://github.com/user-attachments/assets/fe67813c-9709-4ab9-89c9-2bf30c57c2f3" />
+
+
+- **Random Forest Regressor**
+  - R² Score: 0.76
+  - MSE: 3.89  
+  - ➤ Best performing model, robust to noise, and more generalized.
+
+
+<img width="720" alt="Screenshot 2025-05-20 at 21 45 50" src="https://github.com/user-attachments/assets/33c1ad36-fa6b-4d96-a5de-9e2d35c63b82" />
+
+#### 🔍 Why Tree-based Models Worked Better
+
+Linear regression assumes a **consistent, linear relationship** between features and target. However, in Ultimate Frisbee:
+
+- Turnovers **don't increase smoothly** with wind speed.
+- Players often adapt to mild/moderate wind, showing little to no performance drop.
+- But **after a certain threshold**, wind can cause a sharp rise in errors.
+
+Tree-based models like **Decision Trees** and **Random Forests** excel in this type of **nonlinear, rule-based environment**. They can effectively split data based on feature thresholds—such as "if wind > 30 m/s"—making them ideal for this kind of sports performance data.
+
+
 
 ### **Limitations & Considerations**
 
@@ -80,6 +130,31 @@ By understanding this relationship, teams can make better decisions when plannin
 - requests (API calls)
 - selenium (for web scraping)
 
-### **Conclusion**
 
-The analysis suggests that higher wind speeds are moderately associated with more turnovers. While the Pearson correlation supports the hypothesis, the t-test does not confirm a statistically significant difference between calm and windy groups. Future work could involve a larger sample size, more granular wind data, or including turnover types to strengthen the findings.
+### **Conclusion & Interpretation**
+
+The goal was to explore whether wind speed can be used to **predict turnover counts** in Ultimate Frisbee. The answer is: **partially, yes**—but with important caveats.
+
+- **Wind is clearly a relevant factor**, as confirmed by hypothesis testing and predictive modeling.
+- However, **Ultimate is too complex to be explained by wind alone**. Other influential variables include:
+  - Opponent strength and tactics
+  - Stadium conditions
+  - Player fatigue and lineup changes
+  - External factors like rain or crowd pressure
+
+These limitations help explain **why linear models underperformed** and why even tree-based models have room for improvement.
+
+Still, **Random Forest** achieved solid performance using only wind and match metrics—suggesting that even with limited data, predictive modeling in sports analytics has real potential.
+
+### **Final Thoughts**
+
+This project illustrates the power of combining **domain understanding** (Ultimate Frisbee) with **data science tools** (statistical testing, ML models) to analyze complex dynamics. While the findings show that **wind has a measurable impact on turnovers**, they also reveal the **multi-dimensional nature of sports**—where no single factor dictates the outcome.
+
+Future improvements could include:
+
+- Adding opponent difficulty as a quantified feature
+- Incorporating rainfall, temperature, or home/away status
+- Expanding to include multiple teams for generalizability
+
+Even though the dataset and feature set were limited, this project proves that **data-informed insights are feasible**—and can even challenge our assumptions about what really drives performance on the field.
+
